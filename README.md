@@ -1,0 +1,94 @@
+# Check Anything 👁
+
+<a href="https://www.npmjs.com/package/remove-anything"><img src="https://img.shields.io/npm/v/remove-anything.svg" alt="Total Downloads"></a>
+<a href="https://www.npmjs.com/package/remove-anything"><img src="https://img.shields.io/npm/dw/remove-anything.svg" alt="Latest Stable Version"></a>
+
+```
+npm i check-anything
+```
+
+Check anything from URLs to Email addresses.
+
+## Usage
+
+```js
+import { isUrl, isHttpsUrl, isEmail } from 'check-anything'
+
+isHttpsUrl('https://github.com') // true
+
+isUrl('ftp://foo.bar/baz') // true
+
+isEmail('me@github.com') // true
+```
+
+### Https vs Http vs FTP vs other URLs
+
+You usually want to use `isHttpsUrl` instead of `isUrl`. It will limit the URLs to just regular `https://` urls and also has the smallest footprint.
+
+#### isHttpsUrl
+
+`isHttpsUrl` is **opiniated**, it will return `false` for the following list to keep the source code small and simple.
+
+- http URLs
+- ftp URLs
+- IP URLs (existing of only numbers)
+- password URLs
+- special characters in domain (but allowed in URI)
+- mailto URLs
+
+```js
+import { isHttpsUrl } from 'check-anything'
+
+// returns true:
+isHttpsUrl('https://github.com')
+isHttpsUrl('https://github.com/ギットハブ') // special character in URI
+
+// returns false:
+isHttpsUrl('http://github.com') // http
+isHttpsUrl('ftp://foo.bar/baz') // ftp
+isHttpsUrl('https://142.42.1.1/') // ip
+isHttpsUrl('https://userid:password@example.com') // password
+isHttpsUrl('https://ギットハブ.com') // special character in domain
+isHttpsUrl('mailto:me@github.com') // mailto URLs
+```
+
+#### isUrl
+
+`isUrl` on the other hand will return `true` for all of these, except for the `mailto:` URL.
+
+```js
+import { isUrl } from 'check-anything'
+
+// returns true:
+isUrl('https://github.com')
+isUrl('https://github.com/ギットハブ') // special character in URI
+isUrl('http://github.com') // http
+isUrl('ftp://foo.bar/baz') // ftp
+isUrl('https://142.42.1.1/') // ip
+isUrl('https://userid:password@example.com') // password
+isUrl('https://ギットハブ.com') // special character in domain
+
+// returns false:
+isUrl('mailto:me@github.com') // mailto URLs
+```
+
+### TODO
+
+Let me know if you are interested in any of these functions, I will consider adding them:
+
+- [ ] `isProbableUrl` — to allow URLs like `'github.com'` without protocol (has chance of failure though)
+- [ ] `isFtpUrl`
+- [ ] `isPasswordUrl`
+- [ ] `isIpUrl`
+- [ ] `isMailtoUrl`
+- [ ] `isSpecialCharacterUrl` — any idea for a better name though? 😅
+
+## Meet the family
+
+- [copy-anything 🎭](https://github.com/mesqueeb/copy-anything)
+- [merge-anything 🥡](https://github.com/mesqueeb/merge-anything)
+- [filter-anything ⚔️](https://github.com/mesqueeb/filter-anything)
+- [find-and-replace-anything 🎣](https://github.com/mesqueeb/find-and-replace-anything)
+- [compare-anything 🛰](https://github.com/mesqueeb/compare-anything)
+- [flatten-anything 🏏](https://github.com/mesqueeb/flatten-anything)
+- [is-what 🙉](https://github.com/mesqueeb/is-what)
