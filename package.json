@@ -2,7 +2,7 @@
   "name": "check-anything",
   "sideEffects": false,
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Check anything from URLs to Email addresses",
   "module": "./dist/index.es.js",
   "main": "./dist/index.cjs",
