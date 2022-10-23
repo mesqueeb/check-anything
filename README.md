@@ -33,7 +33,6 @@ You usually want to use `isHttpsUrl` instead of `isUrl`. It will limit the URLs 
 - ftp URLs
 - IP URLs (existing of only numbers)
 - password URLs
-- special characters in domain (but allowed in URI)
 - mailto URLs
 
 ```js
@@ -41,14 +40,14 @@ import { isHttpsUrl } from 'check-anything'
 
 // returns true:
 isHttpsUrl('https://github.com')
-isHttpsUrl('https://github.com/ギットハブ') // special character in URI
+isHttpsUrl('https://ギットハブ.com') // special characters in domain
+isHttpsUrl('https://github.com/ギットハブ') // special characters in URI
 
 // returns false:
 isHttpsUrl('http://github.com') // http
 isHttpsUrl('ftp://foo.bar/baz') // ftp
 isHttpsUrl('https://142.42.1.1/') // ip
 isHttpsUrl('https://userid:password@example.com') // password
-isHttpsUrl('https://ギットハブ.com') // special character in domain
 isHttpsUrl('mailto:me@github.com') // mailto URLs
 ```
 
@@ -61,12 +60,12 @@ import { isUrl } from 'check-anything'
 
 // returns true:
 isUrl('https://github.com')
-isUrl('https://github.com/ギットハブ') // special character in URI
+isUrl('https://ギットハブ.com') // special characters in domain
+isUrl('https://github.com/ギットハブ') // special characters in URI
 isUrl('http://github.com') // http
 isUrl('ftp://foo.bar/baz') // ftp
 isUrl('https://142.42.1.1/') // ip
 isUrl('https://userid:password@example.com') // password
-isUrl('https://ギットハブ.com') // special character in domain
 
 // returns false:
 isUrl('mailto:me@github.com') // mailto URLs
@@ -81,7 +80,6 @@ Let me know if you are interested in any of these functions, I will consider add
 - [ ] `isPasswordUrl`
 - [ ] `isIpUrl`
 - [ ] `isMailtoUrl`
-- [ ] `isSpecialCharacterUrl` — any idea for a better name though? 😅
 
 ## Meet the family
 
