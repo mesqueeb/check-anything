@@ -1,7 +1,7 @@
 # Check Anything 👁
 
-<a href="https://www.npmjs.com/package/remove-anything"><img src="https://img.shields.io/npm/v/remove-anything.svg" alt="Total Downloads"></a>
-<a href="https://www.npmjs.com/package/remove-anything"><img src="https://img.shields.io/npm/dw/remove-anything.svg" alt="Latest Stable Version"></a>
+<a href="https://www.npmjs.com/package/check-anything"><img src="https://img.shields.io/npm/v/check-anything.svg" alt="Total Downloads"></a>
+<a href="https://www.npmjs.com/package/check-anything"><img src="https://img.shields.io/npm/dw/check-anything.svg" alt="Latest Stable Version"></a>
 
 ```
 npm i check-anything
