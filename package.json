@@ -1,6 +1,6 @@
 {
   "name": "check-anything",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Check anything from URLs to Email addresses",
   "type": "module",
   "sideEffects": false,
