@@ -9,7 +9,7 @@
  *
  * Doesn't allow mailto: URLs
  */
-declare function isUrl(str: string): boolean;
+export declare function isUrl(str: string): boolean;
 /**
  * Returns `true` if the string is a regular `https://` url
  *
@@ -20,6 +20,4 @@ declare function isUrl(str: string): boolean;
  * - password URLs
  * - mailto URLs
  */
-declare function isHttpsUrl(str: string): boolean;
-
-export { isHttpsUrl, isUrl };
+export declare function isHttpsUrl(str: string): boolean;
