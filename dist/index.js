@@ -1,10 +1,10 @@
 /**
- * Returns `true` if the string is a valid URL.
- * Allows:
- * - http(s) URLs
- * - ftp URLs
+ * Returns `true` if the string is a valid URL. Allows:
+ *
+ * - Http(s) URLs
+ * - Ftp URLs
  * - IP URLs (existing of only numbers)
- * - password URLs
+ * - Password URLs
  * - URLs with special characters
  *
  * Doesn't allow mailto: URLs
@@ -16,11 +16,12 @@ export function isUrl(str) {
  * Returns `true` if the string is a regular `https://` url
  *
  * `isHttpsUrl` is **opiniated**, it will return `false` for the following list:
- * - http URLs
- * - ftp URLs
+ *
+ * - Http URLs
+ * - Ftp URLs
  * - IP URLs (existing of only numbers)
- * - password URLs
- * - mailto URLs
+ * - Password URLs
+ * - Mailto URLs
  */
 export function isHttpsUrl(str) {
     return /^(?:(?:https:)?\/\/)(?:(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(str);

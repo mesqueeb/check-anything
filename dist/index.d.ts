@@ -1,10 +1,10 @@
 /**
- * Returns `true` if the string is a valid URL.
- * Allows:
- * - http(s) URLs
- * - ftp URLs
+ * Returns `true` if the string is a valid URL. Allows:
+ *
+ * - Http(s) URLs
+ * - Ftp URLs
  * - IP URLs (existing of only numbers)
- * - password URLs
+ * - Password URLs
  * - URLs with special characters
  *
  * Doesn't allow mailto: URLs
@@ -14,10 +14,11 @@ export declare function isUrl(str: string): boolean;
  * Returns `true` if the string is a regular `https://` url
  *
  * `isHttpsUrl` is **opiniated**, it will return `false` for the following list:
- * - http URLs
- * - ftp URLs
+ *
+ * - Http URLs
+ * - Ftp URLs
  * - IP URLs (existing of only numbers)
- * - password URLs
- * - mailto URLs
+ * - Password URLs
+ * - Mailto URLs
  */
 export declare function isHttpsUrl(str: string): boolean;
